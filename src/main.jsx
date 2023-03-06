@@ -10,6 +10,9 @@ import {
 import RootLayout from './layouts/RootLayout'
 import { Dashboard } from './layouts/Dashboard'
 import { dashboardLoader } from './loaders/dashboardLoader'
+import { Profile } from './layouts/Profile'
+import { Settings } from './layouts/Settings'
+import Community from './layouts/Community'
 
 const router = createBrowserRouter([
   { path: "/",
@@ -25,6 +28,18 @@ const router = createBrowserRouter([
         loader: ({params}) => {
           return dashboardLoader(params.id)
         }
+      },
+      {
+        path: "/profile",
+        element: <Profile/>
+      },
+      {
+        path: "/setting",
+        element: <Settings/>
+      },
+      {
+        path: "/community",
+        element: <Community/>
       }
     ]
   }
