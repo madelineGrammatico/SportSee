@@ -8,7 +8,9 @@ import {
   Navigate
 } from 'react-router-dom'
 
-import RootLayout from './layout/RootLayout'
+import RootLayout from './layouts/RootLayout'
+import { Dashboard } from './layouts/Dashboard'
+import { dashboardLoader } from './loaders/dashboardLoader'
 
 const router = createBrowserRouter([
   { path: "/",
@@ -16,11 +18,14 @@ const router = createBrowserRouter([
     children: [
       { 
         index:true,
-        element: <Navigate to="/home" replace/>
+        element: <Navigate to="/dashboard" replace/>
       },
       {
-        path: "/home",
-        element: <App/>
+        path: "/dashboard/:id",
+        element: <Dashboard/>,
+        loader: ({params}) => {
+          return dashboardLoader(params.id)
+        }
       }
     ]
   }
