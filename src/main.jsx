@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       { 
         index:true,
-        element: <Navigate to="/dashboard" replace/>
+        element: <Navigate to="/dashboard/12" replace/>
       },
       {
         path: "/dashboard/:id",
@@ -30,15 +30,15 @@ const router = createBrowserRouter([
         }
       },
       {
-        path: "/profile",
+        path: "/profile/:id",
         element: <Profile/>
       },
       {
-        path: "/setting",
+        path: "/setting/:id",
         element: <Settings/>
       },
       {
-        path: "/community",
+        path: "/community/:id",
         element: <Community/>
       }
     ]
