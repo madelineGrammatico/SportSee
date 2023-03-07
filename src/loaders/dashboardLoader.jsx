@@ -3,17 +3,21 @@ export async function dashboardLoader(id)  {
     const url = `http://localhost:3000/user/${id}`
 
     const user = await fetch(url)
-        .then(res => { return res.json() })    
+        .then( async (res) => { const {data} = await res.json()
+        return data })    
 
     const activity = await fetch(url+ "/activity")
-        .then(res => { return res.json() })
+        .then( async (res) => { const {data} = await res.json()
+        return data })
 
     const sessions = await fetch(url+ "/average-sessions")
-        .then(res => { return res.json() })
+        .then( async (res) => { const {data} = await res.json()
+        return data })
 
     const performance = await fetch(url+ "/performance")
-        .then(res => { return res.json() })
+        .then( async (res) => { const {data} = await res.json()
+        return data })
     
         console.log(user)
-    return [user, activity, sessions, performance]
+    return { user, activity, sessions, performance }
 }
