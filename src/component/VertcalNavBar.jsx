@@ -5,9 +5,9 @@ export function VertcalNavBar() {
     const {id} = useParams()
     const links = [
         { name: "Accueil", path:`/` },
-        { name: "Profil", path:`/profile/:${id}`},
-        { name: "Réglage", path:`/setting/:${id}`},
-        { name: "communauté", path:`/community/:${id}`}
+        { name: "Profil", path:`/profile/${id}`},
+        { name: "Réglage", path:`/setting/${id}`},
+        { name: "communauté", path:`/community/${id}`}
     ]
     
 
