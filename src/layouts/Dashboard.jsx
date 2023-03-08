@@ -2,11 +2,7 @@ import React from 'react'
 import { useLoaderData } from 'react-router-dom'
 
 export function Dashboard() {
-    const data = useLoaderData()
-    const user = data[0].data
-    const activity = data[1].data
-    const session = data[2].data
-    const performance = data[3].data
+    const { user, activity, session, performance }= useLoaderData()
     console.log("user", user)
     console.log("activity", activity)
     console.log("session", session)
