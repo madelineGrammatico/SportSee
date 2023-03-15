@@ -1,5 +1,5 @@
 import React from 'react'
-import { WorkInProgress } from '../component/WorkInProgress'
+import { WorkInProgress } from '../component/WorkInProgress.jsx'
 
 export function Settings() {
     return (

@@ -8,10 +8,10 @@ import {
 } from 'react-router-dom'
 
 import RootLayout from './layouts/RootLayout'
-import { Dashboard } from './layouts/Dashboard'
-import { dashboardLoader } from './loaders/dashboardLoader'
-import { Profile } from './layouts/Profile'
-import { Settings } from './layouts/Settings'
+import { Dashboard } from './layouts/Dashboard.tsx'
+import { dashboardLoader } from './loaders/dashboardLoader.tsx'
+import { Profile } from './layouts/Profile.tsx'
+import { Settings } from './layouts/Settings.tsx'
 import Community from './layouts/Community'
 
 const router = createBrowserRouter([
