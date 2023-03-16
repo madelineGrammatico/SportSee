@@ -1,5 +1,5 @@
 
-export async function dashboardLoader(id)  {
+export async function dashboardLoader(id: number)  {
     const url = `http://localhost:3000/user/${id}`
 
     const user = await fetch(url)
