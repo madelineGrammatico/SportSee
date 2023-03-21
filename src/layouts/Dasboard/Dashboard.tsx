@@ -53,8 +53,8 @@ export function Dashboard() {
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </header>
       <section className={styles.ChartsBoard}>
-        <Activities>
-          
+        <Activities sessions={activity.sessions}>
+
         </Activities>
         <div style={{background:"red", color: "white"}}>durée sessions</div>
         <div style={{background:"black" , color: "white"}}>objectif journalier</div>
