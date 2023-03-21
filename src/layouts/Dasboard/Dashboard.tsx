@@ -1,5 +1,8 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
+import { Activities } from '../../component/Activities/Activities'
+
+import styles from './Dashboard.module.css'
 
 interface User {
   id: number,
@@ -44,8 +47,19 @@ export function Dashboard() {
     
 
   return (
-   <main>
-    <h1>Bonjour <span>{user.userInfos.firstName}</span></h1>
+   <main className={styles.Dashboard}>
+      <header>
+        <h1>Bonjour <span>{user.userInfos.firstName}</span></h1>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+      </header>
+      <section className={styles.ChartsBoard}>
+        <Activities>
+          
+        </Activities>
+        <div style={{background:"red", color: "white"}}>durée sessions</div>
+        <div style={{background:"black" , color: "white"}}>objectif journalier</div>
+        <div>nutrition</div>
+      </section>
    </main>
   )
 }
