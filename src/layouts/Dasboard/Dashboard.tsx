@@ -1,53 +1,16 @@
-import React from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { Activities } from '../../component/Activities/Activities'
 
 import styles from './Dashboard.module.css'
+import { dashboardData } from '../../loaders/dashboardLoader'
 
-interface User {
-  id: number,
-  userInfos: {
-    firstName: string,
-    lastName: string,
-    age: number
-  },
-  todayScore: number,
-  keyData: {
-    calorieCount: number,
-    proteinCount: number,
-    carbohydrateCount: number
-  }
-}
-interface Activity {
-  userId: number,
-  sessions: {
-    day: Date, 
-    kilogram: number,
-    calories: number,
-  }[]
-}
-
-interface Sessions {
-  userId: number,
-  sessions: {
-    day: number, 
-    sessionsLength: number
-  }[]
-}
-
-interface Performance {
-  userId: number,
-  data: { value: number, kind: number }[]
-  kind: { [key: number]: string }, 
-
-}
 export function Dashboard() {
-    const { user, activity, sessions, performance }: any = useLoaderData()
+    const { user, activity, sessions, performance }= useLoaderData() as dashboardData
 
-    console.log("user", user)
-    console.log("activity", activity)
-    console.log("sessions", sessions)
-    console.log("performance", performance)
+    // console.log("user", user)
+    // console.log("activity", activity)
+    // console.log("sessions", sessions)
+    // console.log("performance", performance)
     
 
   return (

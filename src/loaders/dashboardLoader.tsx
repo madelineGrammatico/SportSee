@@ -1,8 +1,47 @@
+
+type UserType = {
+    id: number,
+    userInfos: {
+    firstName: string,
+    lastName: string,
+    age: number
+    },
+    todayScore: number,
+    keyData: {
+    calorieCount: number,
+    proteinCount: number,
+    carbohydrateCount: number,
+    lipidCount: number
+    }
+}
+ export type ActivityType = {
+    userId: number,
+    sessions: {
+    day: number, 
+    kilogram: number,
+    calories: number,
+    }[]
+}
+
+type SessionsType = {
+    userId: number,
+    sessions: {
+    day: number, 
+    sessionsLength: number
+    }[]
+}
+
+type PerformanceType = {
+    userId: number,
+    data: { value: number, kind: number }[]
+    kind: { [key: number]: string }, 
+
+}
 export type dashboardData = {
-    user: any,
-    activity: any,
-    sessions: any,
-    performance: any
+    user: UserType,
+    activity: ActivityType,
+    sessions: SessionsType,
+    performance: PerformanceType
 
 }
 export async function dashboardLoader(id: number): Promise<dashboardData>  {
@@ -24,6 +63,5 @@ export async function dashboardLoader(id: number): Promise<dashboardData>  {
         .then( async (res) => { const {data} = await res.json()
         return data })
     
-        console.log(user)
     return { user, activity, sessions, performance }
 }

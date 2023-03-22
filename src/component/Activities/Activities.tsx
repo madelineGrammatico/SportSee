@@ -3,10 +3,9 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 import styles from './Activities.module.css'
 type Props = {
-    sessions: { day: number, sessionLength: number }[]
+    sessions: { day: number, kilogram: number, calories: number, }[]
 }
 export const Activities= ({sessions}: Props) => {
-    console.log(sessions[0])
     return (
         <section className={styles.Activities}>
         <ResponsiveContainer width="100%" 
