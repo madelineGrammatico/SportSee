@@ -9,11 +9,9 @@ export const Activities= ({sessions}: Props) => {
     return (
         <section className={styles.Activities}>
         <ResponsiveContainer width="100%" 
-            aspect={3}
+            aspect={2.5}
         >
         <BarChart
-            width={500}
-            height={300}
             data={sessions}
             margin={{
             top: 5,
@@ -23,12 +21,12 @@ export const Activities= ({sessions}: Props) => {
             }}
         >
             
-            <XAxis dataKey="day" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="kilogram" fill="#282D30" />
-            <Bar dataKey="calories" fill="#E60000" />
+        <XAxis dataKey="day" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="kilogram" fill="#282D30" />
+        <Bar dataKey="calories" fill="#E60000" />
         </BarChart>
         </ResponsiveContainer>
     

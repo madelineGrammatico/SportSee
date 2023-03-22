@@ -1,0 +1,6 @@
+.Sessions {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: #E60000;
+    aspect-ratio: 1/1;
+}

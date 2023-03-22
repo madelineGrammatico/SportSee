@@ -3,13 +3,14 @@ import { Activities } from '../../component/Activities/Activities'
 
 import styles from './Dashboard.module.css'
 import { dashboardData } from '../../loaders/dashboardLoader'
+import { Sessions } from '../../component/Sessions/Sessions'
 
 export function Dashboard() {
     const { user, activity, sessions, performance }= useLoaderData() as dashboardData
 
     // console.log("user", user)
     // console.log("activity", activity)
-    // console.log("sessions", sessions)
+    console.log("sessions", sessions)
     // console.log("performance", performance)
     
 
@@ -21,7 +22,7 @@ export function Dashboard() {
       </header>
       <section className={styles.ChartsBoard}>
         <Activities sessions={activity.sessions}/>
-        <div style={{background:"red", color: "white"}}>durée sessions</div>
+        <Sessions sessions={sessions.sessions}/>
         <div style={{background:"black" , color: "white"}}>objectif journalier</div>
         <div>nutrition</div>
       </section>

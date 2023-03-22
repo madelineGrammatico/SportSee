@@ -27,7 +27,7 @@ type SessionsType = {
     userId: number,
     sessions: {
     day: number, 
-    sessionsLength: number
+    sessionLength: number
     }[]
 }
 
