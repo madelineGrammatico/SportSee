@@ -1,5 +1,6 @@
 import { useLoaderData } from 'react-router-dom'
 import { Activities } from '../../component/Activities/Activities'
+import { Performance} from '../../component/Performance/Performance'
 
 import styles from './Dashboard.module.css'
 import { dashboardData } from '../../loaders/dashboardLoader'
@@ -10,8 +11,8 @@ export function Dashboard() {
 
     // console.log("user", user)
     // console.log("activity", activity)
-    console.log("sessions", sessions)
-    // console.log("performance", performance)
+    // console.log("sessions", sessions)
+    console.log("performance", performance)
     
 
   return (
@@ -23,7 +24,7 @@ export function Dashboard() {
       <section className={styles.ChartsBoard}>
         <Activities sessions={activity.sessions}/>
         <Sessions sessions={sessions.sessions}/>
-        <div style={{background:"black" , color: "white"}}>objectif journalier</div>
+        <Performance data={performance.data} kind={performance.kind}/>
         <div>nutrition</div>
       </section>
    </main>
