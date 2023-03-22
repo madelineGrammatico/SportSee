@@ -20,15 +20,19 @@ interface User {
 }
 interface Activity {
   userId: number,
-  sessions: (number| string)[]
+  sessions: {
+    day: Date, 
+    kilogram: number,
+    calories: number,
+  }[]
 }
 
 interface Sessions {
   userId: number,
-  sessions: [
+  sessions: {
     day: number, 
     sessionsLength: number
-  ]
+  }[]
 }
 
 interface Performance {
@@ -53,9 +57,7 @@ export function Dashboard() {
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </header>
       <section className={styles.ChartsBoard}>
-        <Activities sessions={activity.sessions}>
-
-        </Activities>
+        <Activities sessions={activity.sessions}/>
         <div style={{background:"red", color: "white"}}>durée sessions</div>
         <div style={{background:"black" , color: "white"}}>objectif journalier</div>
         <div>nutrition</div>

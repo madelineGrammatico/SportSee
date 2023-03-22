@@ -1,5 +1,11 @@
+export type dashboardData = {
+    user: any,
+    activity: any,
+    sessions: any,
+    performance: any
 
-export async function dashboardLoader(id: number)  {
+}
+export async function dashboardLoader(id: number): Promise<dashboardData>  {
     const url = `http://localhost:3000/user/${id}`
 
     const user = await fetch(url)

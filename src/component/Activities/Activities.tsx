@@ -1,16 +1,17 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-// import styles from './Activities.module.css'
-
-export default class Activities extends PureComponent {
-   constructor(props: any, sessions: any) {
-    super(props)
-    console.log(sessions)
-   }
-   render(){
+import styles from './Activities.module.css'
+type Props = {
+    sessions: { day: number, sessionLength: number }[]
+}
+export const Activities= ({sessions}: Props) => {
+    console.log(sessions[0])
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <section className={styles.Activities}>
+        <ResponsiveContainer width="100%" 
+            aspect={3}
+        >
         <BarChart
             width={500}
             height={300}
@@ -22,15 +23,16 @@ export default class Activities extends PureComponent {
             bottom: 5,
             }}
         >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            
+            <XAxis dataKey="day" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="poid (kg)" fill="#282D30" />
-            <Bar dataKey="Calories Brulées(kCal)" fill="#E60000" />
+            <Bar dataKey="kilogram" fill="#282D30" />
+            <Bar dataKey="calories" fill="#E60000" />
         </BarChart>
         </ResponsiveContainer>
-    );
-     }
+    
+        </section>
+    ) 
 }
