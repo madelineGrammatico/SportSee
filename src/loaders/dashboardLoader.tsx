@@ -1,5 +1,5 @@
 
-type UserType = {
+export type UserType = {
     id: number,
     userInfos: {
     firstName: string,
