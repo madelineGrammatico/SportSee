@@ -1,0 +1,24 @@
+.Nutrition {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Nutrition__article{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.Nutrition__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+}
+.Nutrition__icon {
+    width: 30%;
+}

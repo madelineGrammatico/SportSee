@@ -6,6 +6,7 @@ import styles from './Dashboard.module.css'
 import { dashboardData } from '../../loaders/dashboardLoader'
 import { Sessions } from '../../component/Sessions/Sessions'
 import { ScoreOfDay } from '../../component/ScoreOfDay/ScoreOfDay'
+import { Nutrition } from '../../component/Nutrition/Nutrition'
 
 export function Dashboard() {
     const { user, activity, sessions, performance }= useLoaderData() as dashboardData
@@ -27,7 +28,7 @@ export function Dashboard() {
         <Sessions sessions={sessions.sessions}/>
         <Performance data={performance.data} kind={performance.kind}/>
         <ScoreOfDay user={user}/>
-        <div>nutrition</div>
+        <Nutrition keyData={user.keyData}/>
       </section>
    </main>
   )
