@@ -8,3 +8,26 @@
 .Activities__chart {
     width: 100%
 }
+.Activities__legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.legend__wrapper {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
+    /* width:100%; */
+}
+.legend__legend {
+   
+    display: block;
+    padding-right: 1.5rem;
+}
+.legend__color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}

@@ -11,10 +11,32 @@ export const Activities= ({sessions}: Props) => {
         data["id"]= index + 1
         return data
     })
-    console.log(dataFormated)
-    {console.log(Tooltip)}
+    const CustomTooltip = (props: any) => 
+        
+        {
+            const{ active, payload} = props
+            console.log(props)
+            if (active && payload && payload.length) {
+            return (
+                <div className="custom-tooltip">
+                    <p>{payload[0].value}kg</p>
+                    <p>{payload[1].value}Kcal</p>
+                </div>
+            )}
+            return(
+                <></>
+            )
+        }
+
     return (
         <section className={styles.Activities}>
+        <div className={styles["Activities__legend"]}>
+            <h2>Activité quotidienne</h2>
+            <div className={styles["legend__wrapper"]}>
+            <span className={styles["legend__color"]} style={{backgroundColor: "#000000"}}></span><p className={styles["legend__legend"]}>Poids (kg)</p>
+            <span className={styles["legend__color"]} style={{backgroundColor: "#E60000"}}></span><p className={styles["legend__legend"]}>Calories Brulées (kCal)</p>
+            </div>
+        </div>
         <ResponsiveContainer width="100%" 
             aspect={3.5}
         >
@@ -23,7 +45,7 @@ export const Activities= ({sessions}: Props) => {
             margin={{
             top: 5,
             right: 30,
-            left: 20,
+           
             bottom: 5,
             }}
             barGap={10}
@@ -37,7 +59,8 @@ export const Activities= ({sessions}: Props) => {
         />
         <YAxis 
             domain={[0,'auto']}  
-            hide={true} yAxisId="calories" 
+            hide={true} 
+            yAxisId="calories" 
             tickLine={false} 
             axisLine={false}
         /> 
@@ -52,21 +75,22 @@ export const Activities= ({sessions}: Props) => {
            
         <Tooltip 
             wrapperStyle={{
-                border: "1px solid #E60000"
-            }}
-            contentStyle={{
+                border: 0,
                 background: "#E60000",
-                color: "#FFFFFF",
-                border: "1px solid #E60000"
-            }
-            // labelStyle={{
-            //     color:"#FFFFFF"
+                padding: "20px",
+                color: "#FFFFFF"
+
+            }}
+            // contentStyle={{
+            //     background: "#E60000",
+            //     color: "#FFFFFF",
+            //     border: 0
             // }}
-            // itemStyle={{
-            //     color:"#FFFFFF"
-            // }}
-            // defaultProps.itemStyle
-        }
+            itemStyle={{
+                color:"#FFFFFF",
+                border: 0
+            }}
+            content={ <CustomTooltip/> }
         />
         <Bar 
             dataKey="kilogram" 

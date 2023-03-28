@@ -2,12 +2,9 @@ import style from "./Performance.module.css"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 
-type data ={
-    data: { value: number, kind: number }[]
-}
-type kind = {
-    kind: { [key: number]: string }
-}
+type data =
+   { value: number, kind: number }[]
+type kind =  { [key: number]: string }
 
 export function Performance({data, kind}: {data: data, kind: kind}){
     console.log(kind)
