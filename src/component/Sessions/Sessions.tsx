@@ -23,7 +23,7 @@ export function Sessions({sessions}: Props) {
             bottom: 20,
           }}
         >
-          <XAxis dataKey="day" />
+          <XAxis dataKey="day" tickLine={false} axisLine={false}/>
           <Tooltip />
           <Line type="monotone" dot={false} dataKey="sessionLength" stroke="#FFFFFF" strokeWidth={2} activeDot={{ r: 8 }} />
           
