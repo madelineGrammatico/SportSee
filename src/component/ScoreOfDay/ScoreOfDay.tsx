@@ -19,7 +19,6 @@ type Props = {
     }
 }}
 export function ScoreOfDay({user}: Props) {
-    console.log(user.todayScore)
     return (
         <article className={styles.ScoreOfDay}>
              <ResponsiveContainer width="100%" height="100%">

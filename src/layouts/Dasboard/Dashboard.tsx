@@ -11,10 +11,10 @@ import { Nutrition } from '../../component/Nutrition/Nutrition'
 export function Dashboard() {
     const { user, activity, sessions, performance }= useLoaderData() as dashboardData
 
-    console.log("user", user)
-    console.log("activity", activity)
-    console.log("sessions", sessions)
-    console.log("performance", performance)
+    // console.log("user", user)
+    // console.log("activity", activity)
+    // console.log("sessions", sessions)
+    // console.log("performance", performance)
     
 
   return (

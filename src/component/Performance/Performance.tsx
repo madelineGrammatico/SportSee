@@ -7,7 +7,6 @@ type data =
 type kind =  { [key: number]: string }
 
 export function Performance({data, kind}: {data: data, kind: kind}){
-    console.log(kind)
     return(
         <article className={style.Performance}>
             <ResponsiveContainer width="100%" aspect={1}>

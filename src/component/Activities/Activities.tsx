@@ -15,7 +15,6 @@ export const Activities= ({sessions}: Props) => {
         
         {
             const{ active, payload} = props
-            console.log(props)
             if (active && payload && payload.length) {
             return (
                 <div className="custom-tooltip">

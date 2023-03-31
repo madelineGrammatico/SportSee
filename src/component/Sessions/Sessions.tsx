@@ -4,11 +4,19 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 type Props = {
     sessions: {
         day: number, 
-        sessionLength: number
+        sessionLength: number,
+        nameDay?: string
         }[]
 }
 export function Sessions({sessions}: Props) {
     console.log(sessions)
+    const arrayDay = ["L", "M", "M", "J", "V", "S", "D"]
+    const formatedData = sessions.map((data, index) => {
+      data["nameDay"]= arrayDay[index % 7]
+      console.log(arrayDay[index], index % 7)
+      return data
+    })
+    console.log(formatedData)
     const CustomToolTip = (props: any) => {
       const {active, payload} = props
       if(active && payload && payload.length) {
@@ -31,7 +39,7 @@ export function Sessions({sessions}: Props) {
         <article className={style.Sessions}>
           <ResponsiveContainer width="100%" aspect={1}>
           <AreaChart
-            data={sessions}
+            data={formatedData}
             margin={{
               top: 20,
               right: 0,
@@ -40,7 +48,7 @@ export function Sessions({sessions}: Props) {
             }}
           >
           <XAxis 
-            dataKey="day" 
+            dataKey="nameDay" 
             tickLine={false} 
             axisLine={false}
             tickSize={15}
