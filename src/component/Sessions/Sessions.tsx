@@ -9,26 +9,35 @@ type Props = {
         }[]
 }
 export function Sessions({sessions}: Props) {
-    console.log(sessions)
     const arrayDay = ["L", "M", "M", "J", "V", "S", "D"]
     const formatedData = sessions.map((data, index) => {
       data["nameDay"]= arrayDay[index % 7]
-      console.log(arrayDay[index], index % 7)
       return data
     })
-    console.log(formatedData)
+    
     const CustomToolTip = (props: any) => {
       const {active, payload} = props
       if(active && payload && payload.length) {
+        console.log(payload)
         return( 
           <div style={{
             backgroundColor:"rgba(0, 0, 0, 0.1)", 
             border:0,
-            height: "500px",
-            minWidth: "500px",
+            height: "100%",
+            width: "100%",
             position:"relative",
-            left:-10
-          }}></div>
+            left:-10,
+            display: "flex",
+            alignItems: "center",
+          }}>
+            <div style={{
+              backgroundColor: "#FFFFFF",
+              margin: "1rem",
+              // position: "absolute"
+            }}>
+              <p>{payload[0].value}min</p>
+            </div>
+          </div>
         )
       }
       return(
@@ -37,7 +46,10 @@ export function Sessions({sessions}: Props) {
     }
     return(
         <article className={style.Sessions}>
-          <ResponsiveContainer width="100%" aspect={1}>
+          <ResponsiveContainer 
+            width="100%" 
+            aspect={1}
+          >
           <AreaChart
             data={formatedData}
             margin={{
@@ -58,7 +70,16 @@ export function Sessions({sessions}: Props) {
           <Tooltip 
             content={<CustomToolTip />}
             position={{y:0}}
-            contentStyle={{border:0}}
+            wrapperStyle={{
+              border:0, 
+              width: "100%",
+              height: "100%",
+            }}
+            contentStyle={{
+              border:0,
+              width: "100%",
+              height: "100%",
+            }}
             allowEscapeViewBox={{x: true, y:true}}
             isAnimationActive={false}
             cursor={false}
