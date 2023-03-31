@@ -14,7 +14,7 @@ export function Sessions({sessions}: Props) {
       data["nameDay"]= arrayDay[index % 7]
       return data
     })
-    
+    console.log(sessions)
     const CustomToolTip = (props: any) => {
       const {active, payload} = props
       if(active && payload && payload.length) {
@@ -33,7 +33,6 @@ export function Sessions({sessions}: Props) {
             <div style={{
               backgroundColor: "#FFFFFF",
               margin: "1rem",
-              // position: "absolute"
             }}>
               <p>{payload[0].value}min</p>
             </div>
