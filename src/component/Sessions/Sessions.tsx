@@ -14,11 +14,9 @@ export function Sessions({sessions}: Props) {
       data["nameDay"]= arrayDay[index % 7]
       return data
     })
-    console.log(sessions)
     const CustomToolTip = (props: any) => {
       const {active, payload} = props
       if(active && payload && payload.length) {
-        console.log(payload)
         return( 
           <div style={{
             backgroundColor:"rgba(0, 0, 0, 0.1)", 

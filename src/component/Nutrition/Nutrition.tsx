@@ -48,7 +48,6 @@ export function Nutrition({keyData}: Props) {
             color: "rgba(253, 81, 129, 0.1)"
         }
     ]
-    console.log(dataNutrition[0].icon)
     return(
         <article className={styles.Nutrition}>
             {dataNutrition.map((data)=> 

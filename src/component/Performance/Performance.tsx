@@ -7,12 +7,15 @@ type data =
 type kind =  { [key: number]: string }
 
 export function Performance({data, kind}: {data: data, kind: kind}){
-    const formatedData = data.map((item) => {
+    console.log(data)
+    const formatedData = data.map((item) => {return item})
+    console.log(formatedData)
+    formatedData.map((item) => {
         item["kindString"]= kind[item.kind]
         return item
       })
       console.log(kind)
-      console.log(data)
+      
     return(
         <article className={style.Performance}>
             <ResponsiveContainer width="100%" aspect={1}>
