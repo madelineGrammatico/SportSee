@@ -7,14 +7,11 @@ type data =
 type kind =  { [key: number]: string }
 
 export function Performance({data, kind}: {data: data, kind: kind}){
-    console.log(data)
-    const formatedData = data.map((item) => {return item})
-    console.log(formatedData)
-    formatedData.map((item) => {
-        item["kindString"]= kind[item.kind]
-        return item
+    const formatedData = data.map((item) => {
+        const newItem = {...item}
+        newItem["kindString"]= kind[newItem.kind]
+        return newItem
       })
-      console.log(kind)
       
     return(
         <article className={style.Performance}>
@@ -23,7 +20,7 @@ export function Performance({data, kind}: {data: data, kind: kind}){
                     cx="50%"
                     cy="50%" 
                     outerRadius="80%" 
-                    data={data}
+                    data={formatedData}
                 >
                     <PolarGrid />
                     <PolarAngleAxis 

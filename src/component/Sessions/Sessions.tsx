@@ -9,11 +9,12 @@ type Props = {
         }[]
 }
 export function Sessions({sessions}: Props) {
-    const arrayDay = ["L", "M", "M", "J", "V", "S", "D"]
-    const formatedData = sessions.map((data, index) => {
-      data["nameDay"]= arrayDay[index % 7]
-      return data
-    })
+  const arrayDay = ["L", "M", "M", "J", "V", "S", "D"]
+  const formatedData = sessions.map((data, index) => {
+    const newItem = {...data}
+    newItem["nameDay"]= arrayDay[index % 7]
+    return newItem
+  })
     const CustomToolTip = (props: any) => {
       const {active, payload} = props
       if(active && payload && payload.length) {
@@ -55,7 +56,14 @@ export function Sessions({sessions}: Props) {
               left: 0,
               bottom: 20,
             }}
+            stackOffset='silhouette'
           >
+            {/* <YAxis 
+              // hide={true}
+              type='number'
+              domain={[0, "auto"]}
+            /> */}
+
           <XAxis 
             dataKey="nameDay" 
             tickLine={false} 
@@ -63,6 +71,12 @@ export function Sessions({sessions}: Props) {
             tickSize={15}
             allowDataOverflow={false}
             stroke={"rgba(255, 255, 255, 0.5)"}
+            // includeHidden={true}
+            // domain={["0", "auto"]}
+            // padding={{
+            //   left: 15,
+            //   right: 15
+            // }}
           />
           <Tooltip 
             content={<CustomToolTip />}
