@@ -8,8 +8,9 @@ type Props = {
 }
 export const Activities= ({sessions}: Props) => {
     const dataFormated = sessions.map((data, index)=> {
-        data["id"]= index + 1
-        return data
+        const newItem= {...data}
+        newItem["id"]= index + 1
+        return newItem
     })
     const CustomTooltip = (props: any) => 
         
