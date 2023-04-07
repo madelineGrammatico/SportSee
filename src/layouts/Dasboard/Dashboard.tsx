@@ -26,7 +26,7 @@ export function Dashboard() {
       <section className={styles.ChartsBoard}>
         <Activities sessions={activity.sessions}/>
         <Sessions sessions={sessions.sessions}/>
-        <Performance data={performance.data} kind={performance.kind}/>
+        <Performance data={performance.data}/>
         <ScoreOfDay user={user}/>
         <Nutrition keyData={user.keyData}/>
       </section>

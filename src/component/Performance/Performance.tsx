@@ -6,12 +6,14 @@ type data =
    { value: number, kind: number, kindString?: string }[]
 type kind =  { [key: number]: string }
 
-export function Performance({data, kind}: {data: data, kind: kind}){
+export function Performance({data}: {data: data}){
+    const kindFrench: kind = {1: "Cardio", 2: "Energie", 3: "Endurance", 4:"Force", 5:"Vitesse", 6: "Intensité"}
     const formatedData = data.map((item) => {
         const newItem = {...item}
-        newItem["kindString"]= kind[newItem.kind]
+        newItem["kindString"]= kindFrench[newItem.kind]
         return newItem
-      })
+      }) 
+      console.log(formatedData)
       
     return(
         <article className={style.Performance}>
@@ -19,15 +21,25 @@ export function Performance({data, kind}: {data: data, kind: kind}){
                 <RadarChart 
                     cx="50%"
                     cy="50%" 
-                    outerRadius="80%" 
-                    data={formatedData}
+                    outerRadius="70%" 
+                    data={formatedData.reverse()}
                 >
-                    <PolarGrid />
+                    <PolarGrid 
+                        radialLines={false}
+                    />
                     <PolarAngleAxis 
                         dataKey="kindString" 
+                        stroke="#FFFFFF"
+                        tickLine={false}
+                        axisLine={false}
+                        tickSize={20}
                     />
                     
-                    <Radar dataKey="value" stroke="#FFFFFF" fill="#E60000" fillOpacity={0.6} />
+                    <Radar 
+                        dataKey="value" 
+                        fill="#E60000" 
+                        fillOpacity={0.6} 
+                    />
                 </RadarChart>
             </ResponsiveContainer>
         </article>
