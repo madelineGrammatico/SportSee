@@ -20,9 +20,12 @@ type Props = {
     }
 }}
 export function ScoreOfDay({user}: Props) {
-    const valueScore = (user.todayScore) ? user.todayScore : ((user.score) ? user.score: 0)
-    const valueString = (user.todayScore) ? "todayScore" : "score"
-    console.log(225-270)
+    const valueScore : number = (user.todayScore) ? user.todayScore : ((user.score) ? user.score: 0)
+    const valueString : string = (user.todayScore) ? "todayScore" : "score"
+    const startAngle : number = 225
+    const endChart : number= -45
+    const endAngle : number = startAngle - (startAngle + (-endChart)) * (valueScore)
+
     return (
         <article className={styles.ScoreOfDay}>
              <ResponsiveContainer width="100%" height="100%">
@@ -30,8 +33,8 @@ export function ScoreOfDay({user}: Props) {
                     innerRadius="70%" 
                     barSize={10} 
                     data={[user]}
-                    startAngle={225}
-                    endAngle= {225-270*(valueScore)}
+                    startAngle={startAngle}
+                    endAngle= {endAngle}
                 >
                        
                 <RadialBar
