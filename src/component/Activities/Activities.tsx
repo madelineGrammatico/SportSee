@@ -12,6 +12,11 @@ export const Activities= ({sessions}: Props) => {
         newItem["id"]= index + 1
         return newItem
     })
+
+    let minValueKg : number = dataFormated[0].kilogram
+    dataFormated.map((data)=> {
+        (minValueKg > data.kilogram) ? minValueKg = data.kilogram : null
+    })
     const CustomTooltip = (props: any) => 
         
         {
@@ -66,7 +71,7 @@ export const Activities= ({sessions}: Props) => {
         /> 
         <YAxis 
             orientation='right' 
-            domain={[75, 'auto']} 
+            domain={[minValueKg -1, 'auto']} 
             yAxisId="kilogram" 
             dataKey="kilogram" 
             tickLine={false} 
