@@ -1,5 +1,5 @@
 import styles from './ScoreOfDay.module.css'
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, PolarAngleAxis } from 'recharts'
+import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, PolarAngleAxis , } from 'recharts'
 import { UserType } from '../../loaders/dashboardLoader'
 
 type Props = {
@@ -10,7 +10,8 @@ type Props = {
         lastName: string,
         age: number
         },
-        todayScore: number,
+        todayScore?: number,
+        score?: number,
         keyData: {
         calorieCount: number,
         proteinCount: number,
@@ -19,6 +20,9 @@ type Props = {
     }
 }}
 export function ScoreOfDay({user}: Props) {
+    const valueScore = (user.todayScore) ? user.todayScore : ((user.score) ? user.score: 0)
+    const valueString = (user.todayScore) ? "todayScore" : "score"
+    console.log(225-270)
     return (
         <article className={styles.ScoreOfDay}>
              <ResponsiveContainer width="100%" height="100%">
@@ -26,12 +30,12 @@ export function ScoreOfDay({user}: Props) {
                     innerRadius="70%" 
                     barSize={10} 
                     data={[user]}
-                    startAngle={-45}
-                    endAngle={225}
+                    startAngle={225}
+                    endAngle= {225-270*(valueScore)}
                 >
                        
                 <RadialBar
-                    dataKey="todayScore"
+                    dataKey={valueString}
                     fill="#E60000"
                     cornerRadius={30/2}
                 />
