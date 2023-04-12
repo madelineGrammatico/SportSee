@@ -2,10 +2,12 @@
     grid-column: 3;
     grid-row: 2;
     display: grid;
+    aspect-ratio: 1/1;
+    
     grid-template-columns:  1fr 1fr 1fr;
     grid-template-rows:  1fr 1fr 1fr;
     background-color: #FBFBFB;
-    aspect-ratio: 1/1;
+    
 }
 .ScoreOfDay__title {
     position: absolute;

@@ -1,4 +1,4 @@
-import style from './Sessions.module.css'
+import styles from './Sessions.module.css'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 type Props = {
@@ -43,10 +43,12 @@ export function Sessions({sessions}: Props) {
       )
     }
     return(
-        <article className={style.Sessions}>
+        <article className={styles.Sessions}>
+          <h2 className={styles["Sessions__title"]}>Durée moyenne des sessions</h2>
           <ResponsiveContainer 
             width="100%" 
             aspect={1}
+            className={styles["Sessions__chart"]}
           >
           <AreaChart
             data={formatedData}

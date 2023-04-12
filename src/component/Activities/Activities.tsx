@@ -48,12 +48,10 @@ export const Activities= ({sessions}: Props) => {
         <BarChart
             data={dataFormated}
             margin={{
-            top: 5,
-            right: 30,
-           
-            bottom: 5,
+                top: 5,
+                bottom: 5,
             }}
-            barGap={10}
+            barGap={12}
             
         >
             

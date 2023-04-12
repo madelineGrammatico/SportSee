@@ -1,4 +1,4 @@
-import style from "./Performance.module.css"
+import styles from "./Performance.module.css"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 
@@ -16,8 +16,14 @@ export function Performance({data}: {data: data}){
       console.log(formatedData)
       
     return(
-        <article className={style.Performance}>
-            <ResponsiveContainer width="100%" aspect={1}>
+        <article className={styles.Performance}>
+            
+            <ResponsiveContainer
+                width="100%" 
+                aspect={1}
+                height="100%"
+                className={styles["Performance__chart"]}
+            >
                 <RadarChart 
                     cx="50%"
                     cy="50%" 

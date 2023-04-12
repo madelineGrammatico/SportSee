@@ -3,6 +3,16 @@
     grid-row: 2;
     background-color: #000000;
     aspect-ratio: 1/1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     padding: 1rem;
     font-size: 0.8rem;
+}
+
+.Performance__chart {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 20;
 }
