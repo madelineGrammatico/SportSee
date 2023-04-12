@@ -1,6 +1,37 @@
 .ScoreOfDay {
     grid-column: 3;
     grid-row: 2;
-
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr;
     background-color: #FBFBFB;
+    aspect-ratio: 1/1;
+}
+.ScoreOfDay__title {
+    position: absolute;
+    grid-column: 1;
+    grid-row: 1;
+    margin:  1rem 1.5rem ;
+    font-size: 1.3rem;
+}
+
+.ScoreOfDay__chart {
+    grid-column: 1 / span 3;
+    grid-row:1 / span 3;
+}
+.ScoreOfDay__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2 ;
+    grid-row: 2 ;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #74798c
+}
+ .ScoreOfDay__score {
+    display: block;
+    font-size: 2rem;
+    color: #000000;
 }

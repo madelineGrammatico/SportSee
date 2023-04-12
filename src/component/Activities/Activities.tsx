@@ -43,7 +43,7 @@ export const Activities= ({sessions}: Props) => {
             </div>
         </div>
         <ResponsiveContainer width="100%" 
-            aspect={3.5}
+            aspect={4}
         >
         <BarChart
             data={dataFormated}
