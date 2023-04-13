@@ -4,14 +4,18 @@
     color: #000000;
     padding: 0 6rem;
 }
+.Dashboard__header {
+    padding: 2rem 0 3rem 0;
 
+}
 .ChartsBoard {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows:  50% 50%;
-    gap:1rem;
+    gap:2rem;
 
     
     width: 100%;
-    height: 92hv;
+    /* height: 80hv; */
+    /* padding-bottom: 3rem; */
 }

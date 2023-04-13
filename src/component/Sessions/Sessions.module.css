@@ -7,6 +7,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     overflow: hidden;
+    border-radius: 5px;
 }
 .Sessions__title {
     grid-column: 1;
@@ -15,11 +16,14 @@
     z-index: 100;
     font-size: 1rem;
     color: #FFFFFF;
-    margin: 1rem 1.5rem;
+    margin: 1rem 2rem;
 }
 .Sessions__chart {
     grid-column: 1;
     grid-row: 1/span 2;
     z-index: 20;
     
+}
+.Sessions__axis {
+    transform: scaleX(0.6);
 }

@@ -79,6 +79,7 @@ export function Sessions({sessions}: Props) {
             //   left: 15,
             //   right: 15
             // }}
+            className={styles["Sessions__axis"]}
           />
           <Tooltip 
             content={<CustomToolTip />}

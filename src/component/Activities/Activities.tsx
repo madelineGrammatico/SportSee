@@ -36,14 +36,14 @@ export const Activities= ({sessions}: Props) => {
     return (
         <section className={styles.Activities}>
         <div className={styles["Activities__legend"]}>
-            <h2>Activité quotidienne</h2>
-            <div className={styles["legend__wrapper"]}>
-            <span className={styles["legend__color"]} style={{backgroundColor: "#000000"}}></span><p className={styles["legend__legend"]}>Poids (kg)</p>
-            <span className={styles["legend__color"]} style={{backgroundColor: "#E60000"}}></span><p className={styles["legend__legend"]}>Calories Brulées (kCal)</p>
+            <h2 className={styles["Activities__title"]}>Activité quotidienne</h2>
+                <div className={styles["legend__wrapper"]}>
+                <span className={styles["legend__color"]} style={{backgroundColor: "#000000"}}></span><p className={styles["legend__legend"]}>Poids (kg)</p>
+                <span className={styles["legend__color"]} style={{backgroundColor: "#E60000"}}></span><p className={styles["legend__legend"]}>Calories Brulées (kCal)</p>
             </div>
         </div>
         <ResponsiveContainer width="100%" 
-            aspect={4}
+            aspect={4.5}
         >
         <BarChart
             data={dataFormated}

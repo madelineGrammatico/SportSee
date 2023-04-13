@@ -19,7 +19,7 @@ export function Dashboard() {
 
   return (
    <main className={styles.Dashboard}>
-      <header>
+      <header className={styles["Dashboard__header"]}>
         <h1>Bonjour <span>{user.userInfos.firstName}</span></h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </header>

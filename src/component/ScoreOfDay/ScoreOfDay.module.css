@@ -7,13 +7,14 @@
     grid-template-columns:  1fr 1fr 1fr;
     grid-template-rows:  1fr 1fr 1fr;
     background-color: #FBFBFB;
+    border-radius: 5px;
     
 }
 .ScoreOfDay__title {
     position: absolute;
     grid-column: 1;
     grid-row: 1;
-    margin:  1rem 1.5rem ;
+    margin:  1rem 2rem ;
     font-size: 1.3rem;
 }
 
@@ -32,7 +33,7 @@
     text-align: center;
     color: #74798c
 }
- .ScoreOfDay__score {
+.ScoreOfDay__score {
     display: block;
     font-size: 2rem;
     color: #000000;

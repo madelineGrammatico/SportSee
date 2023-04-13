@@ -1,8 +1,9 @@
 .Activities {
     display: block;
-
+    background-color: #FBFBFB;
     grid-column: 1 / span 3;
     grid-row: 1;
+    border-radius: 5px;
 }
 
 .Activities__chart {
@@ -12,13 +13,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 1rem 0 0 2rem
 }
+.Activities__title {
+    margin:0;
+}
+
 .legend__wrapper {
     display: flex;
     /* justify-content: flex-end; */
     align-items: center;
     gap: 1rem;
     flex-direction: row;
+    padding: 1rem 1.5rem;
     /* width:100%; */
 }
 .legend__legend {
