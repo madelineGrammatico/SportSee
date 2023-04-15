@@ -56,8 +56,8 @@ export function Nutrition({keyData}: Props) {
                        <img src={data.icon} className={styles["Nutrition__icon"]}/>
                     </span>
                     <div>
-                        <p>{data.value}{data.unit}</p>
-                        <p>{data.name}</p>
+                        <p  className={styles["Nutrition__text"]}>{data.value}{data.unit}</p>
+                        <p  className={styles["Nutrition__text"]}>{data.name}</p>
                     </div>
                 </article>
             )}
