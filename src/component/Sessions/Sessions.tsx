@@ -1,5 +1,6 @@
 import styles from './Sessions.module.css'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { scaleLog } from 'd3-scale';
 
 type Props = {
     sessions: {
@@ -60,12 +61,6 @@ export function Sessions({sessions}: Props) {
             }}
             stackOffset='silhouette'
           >
-            {/* <YAxis 
-              // hide={true}
-              type='number'
-              domain={[0, "auto"]}
-            /> */}
-
           <XAxis 
             dataKey="nameDay" 
             tickLine={false} 
@@ -73,13 +68,7 @@ export function Sessions({sessions}: Props) {
             tickSize={15}
             allowDataOverflow={false}
             stroke={"rgba(255, 255, 255, 0.5)"}
-            // includeHidden={true}
-            // domain={["0", "auto"]}
-            // padding={{
-            //   left: 15,
-            //   right: 15
-            // }}
-            className={styles["Sessions__axis"]}
+            interval={"preserveStartEnd"}
           />
           <Tooltip 
             content={<CustomToolTip />}
