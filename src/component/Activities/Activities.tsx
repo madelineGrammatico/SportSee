@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip,  CartesianGrid, ResponsiveContainer } from 'recharts';
 import { DefaultTooltipContent } from 'recharts/types/component/DefaultTooltipContent';
 
 import styles from './Activities.module.css'
@@ -48,13 +48,17 @@ export const Activities= ({sessions}: Props) => {
         <BarChart
             data={dataFormated}
             margin={{
-                top: 5,
+                top: 30,
                 bottom: 5,
             }}
             barGap={12}
             
         >
-            
+        <CartesianGrid
+            vertical={false}
+            strokeDasharray={"1 3"}
+
+        />
         <XAxis 
             dataKey="id" 
             tickLine={false} 
