@@ -66,35 +66,3 @@ export async function dashboardLoader(id: number): Promise<dashboardData>  {
     return { user, activity, sessions, performance }
 }
 
-class Ajax {
-    constructor (
-        private url: string,
-        private endpoint: string = ""
-     ) {}
-    async setEndPoint(endpoint: string) {
-        this.endpoint = endpoint
-    }
-
-    async get(url?: string) {
-        return await fetch(this.url + this.endpoint + url)
-        .then( async (res)=> {const {data} = await res.json()
-            return data
-        })
-    }
-}
-
-const ajax = new Ajax("http://localhost:3000/")
-
-export async function getUser(id: number) {
-    ajax.setEndPoint("user")
-    return ajax.get(`/${id}`)
-}
-export async function getActivity(id: number) {
-    return ajax.get(`/${id}/activity`)
-}
-export async function getSessions(id: number) {
-    return ajax.get(`/${id}/activity`)
-}
-export async function getPerformance(id: number) {
-    return ajax.get(`/${id}/activity`)
-}
