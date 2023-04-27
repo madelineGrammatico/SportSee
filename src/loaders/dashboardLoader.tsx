@@ -1,3 +1,5 @@
+import { redirect } from "react-router-dom"
+import { UserApi } from "../services/userApi"
 
 export type UserType = {
     id: number,
@@ -45,24 +47,26 @@ export type dashboardData = {
 
 }
 export async function dashboardLoader(id: number): Promise<dashboardData>  {
-    const url = `http://localhost:3000/user/${id}`
+    try {
+        const {
+            getUser, 
+            getActivity, 
+            getPerformance, 
+            getSessions
+        } = UserApi()
 
-    const user = await fetch(url)
-        .then( async (res) => { const {data} = await res.json()
-        return data })    
+        const user = await getUser(id)
 
-    const activity = await fetch(url+ "/activity")
-        .then( async (res) => { const {data} = await res.json()
-        return data })
+        const activity = await getActivity(id)
 
-    const sessions = await fetch(url+ "/average-sessions")
-        .then( async (res) => { const {data} = await res.json()
-        return data })
+        const sessions = await getSessions(id)
 
-    const performance = await fetch(url+ "/performance")
-        .then( async (res) => { const {data} = await res.json()
-        return data })
+        const performance = await getPerformance(id)
     
-    return { user, activity, sessions, performance }
+        return { user, activity, sessions, performance }
+    }
+    catch {
+        return redirect("/501") 
+    }
 }
 

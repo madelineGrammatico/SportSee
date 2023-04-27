@@ -1,4 +1,4 @@
-export class UrlAjax {
+class UrlAjax {
     constructor (
         private url: string,
         private endpoint: string = ""
@@ -14,4 +14,4 @@ export class UrlAjax {
         })
     }
 }
-
+export const urlAjax = new UrlAjax("http://localhost:3000/")
