@@ -13,7 +13,7 @@ import { dashboardLoader } from './loaders/dashboardLoader'
 import { Profile } from './layouts/Profile'
 import { Settings } from './layouts/Settings'
 import Community from './layouts/Community'
-import { Page501 } from './layouts/501Page/501Page'
+import { Page500 } from './layouts/500Page/500Page'
 
 const router = createBrowserRouter([
   { path: "/",
@@ -43,8 +43,8 @@ const router = createBrowserRouter([
         element: <Community/>
       },
       {
-        path: "/501",
-        element: <Page501/>
+        path: "/500",
+        element: <Page500/>
       }
 
     ]

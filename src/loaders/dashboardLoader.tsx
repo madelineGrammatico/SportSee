@@ -66,7 +66,7 @@ export async function dashboardLoader(id: number): Promise<dashboardData | Respo
         return { user, activity, sessions, performance }
     }
     catch {
-        return redirect("/501") 
+        return redirect("/500") 
     }
 }
 
