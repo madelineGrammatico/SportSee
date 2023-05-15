@@ -4,32 +4,32 @@ import { UserApi } from "../services/userApi"
 export type UserType = {
     id: number,
     userInfos: {
-    firstName: string,
-    lastName: string,
-    age: number
+        firstName: string,
+        lastName: string,
+        age: number
     },
     todayScore: number,
     keyData: {
-    calorieCount: number,
-    proteinCount: number,
-    carbohydrateCount: number,
-    lipidCount: number
+        calorieCount: number,
+        proteinCount: number,
+        carbohydrateCount: number,
+        lipidCount: number
     }
 }
- export type ActivityType = {
+export type ActivityType = {
     userId: number,
     sessions: {
-    day: number, 
-    kilogram: number,
-    calories: number,
+        day: number, 
+        kilogram: number,
+        calories: number,
     }[]
 }
 
 type SessionsType = {
     userId: number,
     sessions: {
-    day: number, 
-    sessionLength: number
+        day: number, 
+        sessionLength: number
     }[]
 }
 
@@ -46,7 +46,7 @@ export type dashboardData = {
     performance: PerformanceType
 
 }
-export async function dashboardLoader(id: number): Promise<dashboardData>  {
+export async function dashboardLoader(id: number): Promise<dashboardData | Response>  {
     try {
         const {
             getUser, 
