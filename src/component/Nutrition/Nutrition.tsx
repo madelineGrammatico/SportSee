@@ -1,5 +1,5 @@
 import styles from './Nutrition.module.css'
-
+import React from 'react'
 import Fire from "../../assets/icone/Fire.svg"
 import  Apple from "../../assets/icone/apple.svg"
 import  Chicken from "../../assets/icone/chicken.svg"
@@ -13,7 +13,13 @@ type Props = {
         lipidCount: number
     }
 }
-export function Nutrition({keyData}: Props) {
+
+/**
+ * Component for showing the nutritions infos
+ * @param keyData the data
+ * @return divs with the details of user nutrition
+ */
+export function Nutrition({keyData}: Props): JSX.Element {
     const dataNutrition = [
         {
             name: "Calories",

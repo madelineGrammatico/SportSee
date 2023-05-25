@@ -1,6 +1,6 @@
+import React from 'react'
 import styles from './Sessions.module.css'
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { scaleLog } from 'd3-scale';
+import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 type Props = {
     sessions: {
@@ -9,6 +9,11 @@ type Props = {
         nameDay?: string
         }[]
 }
+/**
+ * Component for showing the sessions chart
+ * @param sessions the data of the sessions
+ * @return a chart with the details of the sessions
+ */
 export function Sessions({sessions}: Props) {
   const arrayDay = ["L", "M", "M", "J", "V", "S", "D"]
   const formatedData = sessions.map((data, index) => {

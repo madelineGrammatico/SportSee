@@ -1,10 +1,17 @@
 import React from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { 
+    NavLink,
+    //  useParams 
+} from 'react-router-dom'
 
 import styles from './VerticalNavBar.module.css'
 
+/**
+ * Component for showing a vertical bar
+ * @return a vertical bar with the navigation
+ */
 export function VerticalNavBar() {
-    const {id} = useParams()
+    // const {id} = useParams()
     const links = [
         { name: "yoga", path:`#` },
         { name: "muscu", path:`#`}

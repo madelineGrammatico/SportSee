@@ -1,11 +1,17 @@
+import React from 'react'
 import styles from "./Performance.module.css"
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 
 type data =
    { value: number, kind: number, kindString?: string }[]
 type kind =  { [key: number]: string }
 
+/**
+ * Component for showing the performance chart
+ * @param data the data of the performance
+ * @return a chart with the details of the performance
+ */
 export function Performance({data}: {data: data}){
     const kindFrench: kind = {1: "Cardio", 2: "Energie", 3: "Endurance", 4:"Force", 5:"Vitesse", 6: "Intensité"}
     const formatedData = data.map((item) => {

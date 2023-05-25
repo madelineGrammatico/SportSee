@@ -1,0 +1,21 @@
+{
+    "tags": {
+      "allowUnknownTags": true,
+      "dictionaries": ["jsdoc", "closure"]
+    },
+    "source": {
+      "include": ["src"],
+      "includePattern": ".(ts|tsx)$",
+      "excludePattern": "(nodes_modules/|docs)_"
+    },
+    "sourceType": "module",
+    "plugins": ["plugins/markdown"],
+    "templates": {
+      "cleverLinks": true,
+      "monospaceLinks" : true
+    },
+    "opts": {
+      "recurse": true,
+      "destination": "./docs/"
+    }
+  }

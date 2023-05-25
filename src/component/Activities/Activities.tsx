@@ -1,11 +1,18 @@
-import React, { PureComponent } from 'react';
+import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip,  CartesianGrid, ResponsiveContainer } from 'recharts';
-import { DefaultTooltipContent } from 'recharts/types/component/DefaultTooltipContent';
+import styles from './Activities.module.css';
 
-import styles from './Activities.module.css'
+
 type Props = {
     sessions: { day: number, kilogram: number, calories: number, id?: number }[]
 }
+
+/**
+ * Component for showing the activity chart
+ * @typeParam Props
+ * @param sessions the data of the sessions
+ * @return a chart with the details of the activity
+ */
 export const Activities= ({sessions}: Props) => {
     const dataFormated = sessions.map((data, index)=> {
         const newItem= {...data}

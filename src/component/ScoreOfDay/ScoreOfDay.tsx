@@ -1,6 +1,6 @@
+import React from 'react'
 import styles from './ScoreOfDay.module.css'
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, PolarAngleAxis , } from 'recharts'
-import { UserType } from '../../loaders/dashboardLoader'
+import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
 
 type Props = {
     user :{
@@ -19,6 +19,12 @@ type Props = {
         lipidCount: number
     }
 }}
+
+/**
+ * Component for showing the score of the day
+ * @param user 
+ * @return a chart the score of the day
+ */
 export function ScoreOfDay({user}: Props) {
     const valueScore : number = (user.todayScore) ? user.todayScore : ((user.score) ? user.score: 0)
     // const valueScore : number = 1

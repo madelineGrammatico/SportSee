@@ -1,7 +1,11 @@
 import { NavLink, useParams } from 'react-router-dom'
-
+import React from 'react'
 import styles from './HorizontalNavBar.module.css'
 
+/**
+ * Component for showing a horizontal bar
+ * @return a horizontal bar with the navigation
+ */
 export function HorizontalNavBar() {
     const {id} = useParams()
     const links = [

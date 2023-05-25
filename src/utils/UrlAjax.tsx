@@ -1,4 +1,12 @@
+/**
+ * 
+ */
 class UrlAjax {
+    /**
+     * constructor of UrlAjax class
+     * @param url 
+     * @param endpoint 
+     */
     constructor (
         private url: string,
         private endpoint: string = ""

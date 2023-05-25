@@ -46,6 +46,11 @@ export type dashboardData = {
     performance: PerformanceType
 
 }
+/**
+ * function to retrieve user infos or redirect to 500 page 
+ * @param {number} id userId
+ * @returns user, activity, sessions, performance or redirect to 500 page
+ */
 export async function dashboardLoader(id: number): Promise<dashboardData | Response>  {
     try {
         const {
