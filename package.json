@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "doc": "jsdoc -c jsdoc.json",
     "lint": "eslint -f unix \"src/**/*.{ts,tsx}\"",
-    "typedoc": "typedoc --out docs src/main.tsx"
+    "typedoc": "typedoc --out docs --entryPointStrategy expand ./src"
   },
   "dependencies": {
     "jsdoc": "^4.0.2",

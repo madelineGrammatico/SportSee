@@ -29,8 +29,8 @@ export function ScoreOfDay({user}: Props) {
     const valueScore : number = (user.todayScore) ? user.todayScore : ((user.score) ? user.score: 0)
     // const valueScore : number = 1
     const valueString : string = (user.todayScore) ? "todayScore" : "score"
-    const startAngle : number = 225
-    const endChart : number= -135
+    const startAngle = 225
+    const endChart = -135
     const endAngle : number = startAngle - (startAngle + (-endChart)) * (valueScore)
 
     return (
