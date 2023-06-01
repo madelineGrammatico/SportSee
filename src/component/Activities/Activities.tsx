@@ -25,7 +25,7 @@ export const Activities= ({sessions}: Props) => {
     dataFormated.map((data)=> {
         (minValueKg > data.kilogram) ? minValueKg = data.kilogram : null
     })
-    const CustomTooltip = (props: {active: boolean, payload:[]}) => 
+    const CustomTooltip = (props: any) => 
         
         {
             const{ active, payload} = props

@@ -1,4 +1,9 @@
 import React from 'react'
+import yoga from '../../assets/icone/yoga.svg'
+import swim from '../../assets/icone/swim.svg'
+import bike from '../../assets/icone/bike.svg'
+import bodyBulding from '../../assets/icone/bodyBulding.svg'
+
 import { 
     NavLink,
     //  useParams 
@@ -13,8 +18,10 @@ import styles from './VerticalNavBar.module.css'
 export function VerticalNavBar() {
     // const {id} = useParams()
     const links = [
-        { name: "yoga", path:`#` },
-        { name: "muscu", path:`#`}
+        { name: "yoga", path:`#`, icone: yoga },
+        { name: "nage", path:`#`, icone:swim },
+        { name: "vélo", path:`#`, icone:bike },
+        { name: "muscu", path:`#`, icone: bodyBulding }
     ]
     
 
@@ -28,11 +35,16 @@ export function VerticalNavBar() {
                         className = { styles["NavLink--vertical"] }
                         to={link.path} 
                         key={index}
-                    >{link.name}</NavLink>
+                    >
+                        <img 
+                            src={link.icone}
+                            alt={link.name}
+                        />
+                    </NavLink>
                 )
             }
         </nav>
-        
+        <p className={styles["NavBar__copiryght"]}>Copiryght, SportSee 2020</p>
     </header>
   )
 }

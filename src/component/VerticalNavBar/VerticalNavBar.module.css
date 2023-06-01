@@ -1,21 +1,39 @@
 .VerticalNavBar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     
     background-color: #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+    width: 8rem;
+    padding: 3rem 0;
     grid-row: 2;
     grid-column: 1;
 }
 .NavBar--vertical {
     display: flex;
-    gap: 3rem;
+    gap: 1.5rem;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    
+    height: 60%;
 }
 .NavLink--vertical {
-    color: #FFFFFF;
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.NavBar__copiryght {
+    width: fit-content;
+    transform: rotate(270deg);
+    font-size: small;
+    white-space: nowrap;
+    color:#FFFFFF;
 }
