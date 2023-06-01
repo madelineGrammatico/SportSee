@@ -33,6 +33,12 @@
 }
 .Nutrition__text{
     margin: 0;
+    font-size: 1.2rem;
+}
+.Nutrition__text--light{
+    margin: 0;
+    color: #74798C;
+    font-size: 0.9rem;
 }
 .Nutrition__icon {
     width: 30%;

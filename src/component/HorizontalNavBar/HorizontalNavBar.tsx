@@ -2,6 +2,8 @@ import { NavLink, useParams } from 'react-router-dom'
 import React from 'react'
 import styles from './HorizontalNavBar.module.css'
 
+import run from '../../assets/icone/run.svg'
+
 /**
  * Component for showing a horizontal bar
  * @return a horizontal bar with the navigation
@@ -19,7 +21,10 @@ export function HorizontalNavBar() {
   return (
     <nav className={styles.HorizontalNavBar}>
         <span className={styles.Logo}>
-        <p>SportSee</p>
+            <div className={styles.Logo__icone}>
+                <img src={run}/>
+            </div>
+            <p>SportSee</p>
         </span>
         {
             links.map((link, index) => 

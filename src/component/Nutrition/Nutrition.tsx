@@ -63,7 +63,7 @@ export function Nutrition({keyData}: Props): JSX.Element {
                     </span>
                     <div>
                         <p  className={styles["Nutrition__text"]}>{data.value}{data.unit}</p>
-                        <p  className={styles["Nutrition__text"]}>{data.name}</p>
+                        <p  className={styles["Nutrition__text--light"]}>{data.name}</p>
                     </div>
                 </article>
             )}

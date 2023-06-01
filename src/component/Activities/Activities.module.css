@@ -13,10 +13,14 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin: 1rem 0 0 2rem
+    margin: 1rem 0 0 2rem;
+    font-size: .9rem;
+    color: #74798C;
 }
 .Activities__title {
     margin:0;
+    font-size: 1rem;
+    color: #000000;
 }
 
 .legend__wrapper {

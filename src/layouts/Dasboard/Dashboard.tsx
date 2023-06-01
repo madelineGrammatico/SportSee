@@ -21,8 +21,8 @@ export function Dashboard() {
   return (
    <main className={styles.Dashboard}>
       <header className={styles["Dashboard__header"]}>
-        <h1>Bonjour <span>{user.userInfos.firstName}</span></h1>
-        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+        <h1>Bonjour <span className={styles.nameUser}>{user.userInfos.firstName}</span></h1>
+        <p className={styles.congratulation}>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </header>
       <section className={styles.ChartsBoard}>
         <Activities sessions={activity.sessions}/>

@@ -5,18 +5,22 @@
     padding: 0 10rem;
 }
 .Dashboard__header {
-    padding: 2rem 0 3rem 0;
+    padding: 2rem 0 2rem 0;
+    font-size: 1.5rem;
 
 }
 .ChartsBoard {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:   1fr 1fr;
+    grid-template-rows: auto 1fr;
     gap:2rem;
 
-    
-    width: 100%;
-    /* height: 80hv; */
     max-height: 60%;
-    /* padding-bottom: 3rem; */
+}
+.congratulation {
+    font-weight: 400;
+    font-size: 1rem;
+}
+.nameUser {
+    color: #E60000;
 }
