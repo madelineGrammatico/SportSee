@@ -1,5 +1,6 @@
 import { redirect } from "react-router-dom"
 import { UserApi } from "../services/userApi"
+// import { UserMock } from "../services/userMock"
 
 export type UserType = {
     id: number,
@@ -19,13 +20,13 @@ export type UserType = {
 export type ActivityType = {
     userId: number,
     sessions: {
-        day: number, 
+        day: string, 
         kilogram: number,
         calories: number,
     }[]
 }
 
-type SessionsType = {
+export type SessionsType = {
     userId: number,
     sessions: {
         day: number, 
@@ -33,7 +34,7 @@ type SessionsType = {
     }[]
 }
 
-type PerformanceType = {
+export type PerformanceType = {
     userId: number,
     data: { value: number, kind: number }[]
     kind: { [key: number]: string }, 
@@ -73,5 +74,28 @@ export async function dashboardLoader(id: number): Promise<dashboardData | Respo
     catch {
         return redirect("/500") 
     }
+
+    // const {
+    //     getUser, 
+    //     getActivity, 
+    //     getPerformance, 
+    //     getSessions
+    // } = UserMock()
+
+    // const user = await getUser(id)
+    // console.log(user)
+
+    // const activity = await getActivity(id)
+
+    // const sessions = await getSessions(id)
+
+    // const performance = await getPerformance(id)
+
+    // return {
+    //      user, 
+    //      activity, 
+    //      sessions, 
+    //      performance 
+    //     }
 }
 

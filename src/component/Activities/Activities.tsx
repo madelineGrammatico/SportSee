@@ -1,10 +1,11 @@
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip,  CartesianGrid, ResponsiveContainer } from 'recharts';
 import styles from './Activities.module.css';
+import { Payload } from 'recharts/types/component/DefaultLegendContent';
 
 
 type Props = {
-    sessions: { day: number, kilogram: number, calories: number, id?: number }[]
+    sessions: { day: string, kilogram: number, calories: number, id?: number }[]
 }
 
 /**
@@ -24,7 +25,7 @@ export const Activities= ({sessions}: Props) => {
     dataFormated.map((data)=> {
         (minValueKg > data.kilogram) ? minValueKg = data.kilogram : null
     })
-    const CustomTooltip = (props: any) => 
+    const CustomTooltip = (props: {active: boolean, payload:[]}) => 
         
         {
             const{ active, payload} = props
