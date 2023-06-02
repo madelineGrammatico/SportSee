@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom'
 
 import styles from './VerticalNavBar.module.css'
+import { Vignette } from '../Vignettes/Vignette'
 
 /**
  * Component for showing a vertical bar
@@ -31,16 +32,17 @@ export function VerticalNavBar() {
         <nav className={styles["NavBar--vertical"]}>
             {
                 links.map((link, index) => 
-                    <NavLink 
-                        className = { styles["NavLink--vertical"] }
-                        to={link.path} 
-                        key={index}
-                    >
-                        <img 
-                            src={link.icone}
-                            alt={link.name}
-                        />
-                    </NavLink>
+                    // <NavLink 
+                    //     className = { styles["NavLink--vertical"] }
+                    //     to={link.path} 
+                    //     key={index}
+                    // >
+                    //     <img 
+                    //         src={link.icone}
+                    //         alt={link.name}
+                    //     />
+                    // </NavLink>
+                    <Vignette icon={link.icone} key={index}/>
                 )
             }
         </nav>

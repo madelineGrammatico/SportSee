@@ -9,7 +9,6 @@ export default function RootLayout() {
     <div className={style.RootLayout}>
     <HorizontalNavBar/>
     <VerticalNavBar/>
-    
     <Outlet/>
     </div>
   )

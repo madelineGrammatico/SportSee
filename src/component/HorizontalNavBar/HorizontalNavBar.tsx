@@ -14,7 +14,7 @@ export function HorizontalNavBar() {
         { name: "Accueil", path:`/` },
         { name: "Profil", path:`/profile/${id}`},
         { name: "Réglage", path:`/setting/${id}`},
-        { name: "communauté", path:`/community/${id}`}
+        { name: "Communauté", path:`/community/${id}`}
     ]
     
 

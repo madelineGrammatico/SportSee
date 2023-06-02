@@ -5,6 +5,8 @@ import  Apple from "../../assets/icone/apple.svg"
 import  Chicken from "../../assets/icone/chicken.svg"
 import  Cheeseburger from "../../assets/icone/cheeseburger.svg"
 
+import { Vignette } from '../Vignettes/Vignette'
+
 type Props = {
     keyData: {
         calorieCount: number,
@@ -58,9 +60,7 @@ export function Nutrition({keyData}: Props): JSX.Element {
         <article className={styles.Nutrition}>
             {dataNutrition.map((data)=> 
                 <article className={styles["Nutrition__article"]} key={data.id}>
-                    <span className={styles["Nutrition__img"]} style={{background: data.color}}>
-                       <img src={data.icon} className={styles["Nutrition__icon"]}/>
-                    </span>
+                    <Vignette icon={data.icon} color={data.color}/>
                     <div>
                         <p  className={styles["Nutrition__text"]}>{data.value}{data.unit}</p>
                         <p  className={styles["Nutrition__text--light"]}>{data.name}</p>

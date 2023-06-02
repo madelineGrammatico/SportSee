@@ -33,7 +33,7 @@ export function Performance({data}: {data: data}){
                 <RadarChart 
                     cx="50%"
                     cy="50%" 
-                    outerRadius="65%" 
+                    outerRadius="70%" 
                     data={formatedData.reverse()}
                 >
                     <PolarGrid 
@@ -44,7 +44,7 @@ export function Performance({data}: {data: data}){
                         stroke="#FFFFFF"
                         tickLine={false}
                         axisLine={false}
-                        tickSize={20}
+                        tickSize={12}
                     />
                     
                     <Radar 

@@ -59,7 +59,7 @@ export function Sessions({sessions}: Props) {
           <AreaChart
             data={formatedData}
             margin={{
-              top: 20,
+              top: 40,
               right: 0,
               left: 0,
               bottom: 20,
